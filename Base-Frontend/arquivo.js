@@ -3,6 +3,7 @@ function main(){
     console.log(1);
     // teste
     // teste John
+    //Teste lucas
 }
 
 main();
