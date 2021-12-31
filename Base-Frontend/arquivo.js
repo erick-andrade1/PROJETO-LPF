@@ -3,6 +3,8 @@ function main(){
     console.log(1);
 
     // testesteste
+
+    // teste2 
 }
 
 main();
