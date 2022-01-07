@@ -5,7 +5,21 @@
         <li>Erick Veríssimo</li>
         <li>João Filipe Reis</li>
         <li>Lucas Tenório</li>
+        <li>Jônatas Henrique da Cruz Moura</li>
         <li></li>
-        <li></li>
+    </ul>
+</div>
+<div>
+    <h4>Passo a passo para iniciar a aplicação:</h4>
+    <ul>
+        <li>
+            <p>Abra o terminal e execute o comando: sdk kotlin 1.5.0, isso irá instalar o comando "kotlin" q é necessário para utilizar os arquivos .kt e .kts</p>
+        </li>
+        <li>
+            <p>Após baixar o kotlin, abra um terminal na pasta Base-Frontend, lá execute o comando kotlin myServer.main.kts, esse comando é o responsável por subir o serviço web</p>
+        </li>
+        <li>
+            <p>Após o comando acima ter sido executado, no canto inferior direito irá aparecer opções de abrir uma página no browser, clique e lá estará a sua página web padrão, que em nosso caso será o arquivo "index.html"</p>
+        </li>
     </ul>
 </div>
