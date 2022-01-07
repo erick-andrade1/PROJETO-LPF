@@ -11,8 +11,15 @@ import kotlin.io.*
 
 
 @SpringBootApplication
+@RestController
 open class MyApp {
-    
+    @GetMapping("/BackEnd.html")
+    fun BackEnd() : Any {    
+        return File("../Base-Backend/BackEnd.kt");
+    }
+
 }
 
+
 runApplication<MyApp>("--server.port=8000")
+println("Server running on port = 8000");
