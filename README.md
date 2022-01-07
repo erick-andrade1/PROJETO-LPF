@@ -6,7 +6,7 @@
         <li>João Filipe Reis</li>
         <li>Lucas Tenório</li>
         <li>Jônatas Henrique da Cruz Moura</li>
-        <li></li>
+        <li>José Victor Richelly Santos</li>
     </ul>
 </div>
 <div>
