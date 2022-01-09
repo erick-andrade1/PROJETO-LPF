@@ -19,65 +19,215 @@
     <div class="justify-center" style="padding-top: 30px; padding-bottom: 40px;">
         <img src="./images/256px-International_Pokémon_logo.svg.png">
     </div>
-    <div class="justify-center" style="padding-bottom: 20px;">
-        <div class="page-font" style="font-size: 24px; color: #0b065b;">
-            Escolha o 1º tipo do primeiro pokémon
+    <form class="row">
+        <div class="col">
+            <div style="padding: 50px;">
+                <div class="page-font" style="font-size: 36px; color: #0b065b;">
+                    Seleção do Pokémon atacante
+                </div>
+            </div>
+            <div style="display: inline-block; padding-right: 40px;">
+                <div class="page-font" style="font-size: 16px; color: #0b065b;">
+                    Selecione o 1º tipo do Pokémon
+                </div>
+                <div style="padding: 20px;">
+                    <select name="Type1" id="" style="width: 200px; height: 30px;">
+                        <option value="" selected disabled>Selecione:</option>
+                        <option value="1">Fire</option>
+                        <option value="2">Grass</option>
+                        <option value="3">Ghost</option>
+                        <option value="4">Fairy</option>
+                        <option value="5">Ice</option>
+                        <option value="6">Flying</option>
+                        <option value="7">Water</option>
+                        <option value="8">Ground</option>
+                        <option value="9">Psychic</option>
+                        <option value="10">Dragon</option>
+                        <option value="11">Fighting</option>
+                        <option value="12">Bug</option>
+                        <option value="13">Electric</option>
+                        <option value="14">Rock</option>
+                        <option value="15">Dark</option>
+                        <option value="16">Steel</option>
+                        <option value="17">Normal</option>
+                        <option value="18">Poison</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: inline-block;">
+                <div class="page-font" style="font-size: 16px; color: #0b065b;">
+                    Selecione o 2º tipo do Pokémon
+                </div>
+                <div style="padding: 20px;">
+                    <select name="Type2" id="" style="width: 200px; height: 30px;">
+                        <option value="" selected disabled>Selecione:</option>
+                        <option value="1">Fire</option>
+                        <option value="2">Grass</option>
+                        <option value="3">Ghost</option>
+                        <option value="4">Fairy</option>
+                        <option value="5">Ice</option>
+                        <option value="6">Flying</option>
+                        <option value="7">Water</option>
+                        <option value="8">Ground</option>
+                        <option value="9">Psychic</option>
+                        <option value="10">Dragon</option>
+                        <option value="11">Fighting</option>
+                        <option value="12">Bug</option>
+                        <option value="13">Electric</option>
+                        <option value="14">Rock</option>
+                        <option value="15">Dark</option>
+                        <option value="16">Steel</option>
+                        <option value="17">Normal</option>
+                        <option value="18">Poison</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="page-font col-3" style="font-size: 24px; color: #0b065b; display: inline-block;">
+                    <div>
+                        ATK:
+                    </div>
+                    <div style="padding: 20px; display: inline-block;">
+                        <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                    </div>
+                </div>
+                <div class="page-font col-3" style="font-size: 24px; color: #0b065b; display: inline-block;">
+                    <div>
+                        SP.ATK
+                    </div>
+                    <div style="padding: 20px; display: inline-block;">
+                        <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                    </div>
+                </div>
+                <div class="page-font col-3" style="font-size: 24px; color: #0b065b; display: inline-block;">
+                    <div>
+                        LEVEL:
+                    </div>
+                    <div style="padding: 20px; display: inline-block;">
+                        <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                        Informe o poder de ataque:
+                    </div>
+                    <div style="padding: 20px;">
+                        <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                        O ataque é especial?
+                    </div>
+                    <div class="page-font" style="padding: 20px; color: #0b065b;">
+                        <input type="checkbox" id="scales" name="atkType" style="transform: scale(1.5);">
+                        <label for="atkType">Sim</label>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-    </div>
-    <div class="grid-container">
-        <div>
-            <button class="button-style page-font" style="border: none;"> Fire</button>
+        <div class="col">
+            <div style="padding: 50px;">
+                <div class="page-font" style="font-size: 36px; color: #0b065b;">
+                    Seleção do Pokémon defensor
+                </div>
+            </div>
+            <div style="display: inline-block; padding-right: 40px;">
+                <div class="page-font" style="font-size: 16px; color: #0b065b;">
+                    Selecione o 1º tipo do Pokémon
+                </div>
+                <div style="padding: 20px;">
+                    <select name="Type1" id="" style="width: 200px; height: 30px;">
+                        <option value="" selected disabled>Selecione:</option>
+                        <option value="1">Fire</option>
+                        <option value="2">Grass</option>
+                        <option value="3">Ghost</option>
+                        <option value="4">Fairy</option>
+                        <option value="5">Ice</option>
+                        <option value="6">Flying</option>
+                        <option value="7">Water</option>
+                        <option value="8">Ground</option>
+                        <option value="9">Psychic</option>
+                        <option value="10">Dragon</option>
+                        <option value="11">Fighting</option>
+                        <option value="12">Bug</option>
+                        <option value="13">Electric</option>
+                        <option value="14">Rock</option>
+                        <option value="15">Dark</option>
+                        <option value="16">Steel</option>
+                        <option value="17">Normal</option>
+                        <option value="18">Poison</option>
+                    </select>
+                </div>
+            </div>
+            <div style="display: inline-block;">
+                <div class="page-font" style="font-size: 16px; color: #0b065b;">
+                    Selecione o 2º tipo do Pokémon
+                </div>
+                <div style="padding: 20px;">
+                    <select name="Type2" id="" style="width: 200px; height: 30px;">
+                        <option value="" selected disabled>Selecione:</option>
+                        <option value="1">Fire</option>
+                        <option value="2">Grass</option>
+                        <option value="3">Ghost</option>
+                        <option value="4">Fairy</option>
+                        <option value="5">Ice</option>
+                        <option value="6">Flying</option>
+                        <option value="7">Water</option>
+                        <option value="8">Ground</option>
+                        <option value="9">Psychic</option>
+                        <option value="10">Dragon</option>
+                        <option value="11">Fighting</option>
+                        <option value="12">Bug</option>
+                        <option value="13">Electric</option>
+                        <option value="14">Rock</option>
+                        <option value="15">Dark</option>
+                        <option value="16">Steel</option>
+                        <option value="17">Normal</option>
+                        <option value="18">Poison</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                        DEF:
+                    </div>
+                    <div style="padding: 20px;">
+                        <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                        SP.DEF:
+                    </div>
+                    <div style="padding: 20px;">
+                        <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Grass</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Ghost</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Fairy</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Ice</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Flying</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Water</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Ground</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Psychic</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Dragon</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Fighting</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Bug</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Electric</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Rock</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Dark</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Steel</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Normal</button>
-        </div>
-        <div>
-            <button class="button-style page-font" style="border: none;"> Poison</button>
+    </form>
+
+    <div class="justify-center" style="padding-top: 40px;">
+        <div class="page-font tutorial-div">
+            <ul>
+                <p>
+                    Tutorial da calculadora:
+                </p>
+                <li> Cada pokémon possui até 2 tipos</li>
+                <li> Cada tipo possui suas próprias fraquezas e resistências</li>
+                <li> Quando dois tipos são combinados suas fraquezas e resistências são multiplicadas uma pela outra
+                </li>
+                <li> A calculadora faz o cálculo de dano causado por um ataque em outro Pokémon</li>
+                <li> Os ataques também possuem tipos</li>
+                <li> Stab: Quando o ataque é do mesmo tipo que o Pokémon a força dele é aumentada em 50% </li>
+            </ul>
         </div>
     </div>
 
