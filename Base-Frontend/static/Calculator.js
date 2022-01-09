@@ -2,8 +2,8 @@ if (typeof kotlin === 'undefined') {
   throw new Error("Error loading module 'Calculator'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'Calculator'.");
 }var Calculator = function (_, Kotlin) {
   'use strict';
-  var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
+  var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
   var contains = Kotlin.kotlin.text.contains_li3zpu$;
   var Pair = Kotlin.kotlin.Pair;
   var listOf_0 = Kotlin.kotlin.collections.listOf_mh5how$;
@@ -15,6 +15,9 @@ if (typeof kotlin === 'undefined') {
   var emptyList = Kotlin.kotlin.collections.emptyList_287e2$;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var checkIndexOverflow = Kotlin.kotlin.collections.checkIndexOverflow_za3lpa$;
+  function main(object1, object2) {
+    println(object1);
+  }
   function mainTest() {
     var tmp$, tmp$_0, tmp$_1, tmp$_2;
     var ma = new modFlo(listOf(['F', 'G', 'W']), listOf([2.0, 0.5, 2.0]));
@@ -309,6 +312,7 @@ if (typeof kotlin === 'undefined') {
       return combinar(a1.plus_dvhx5k$(a2.getP_za3lpa$(n)), a2, n + 1 | 0);
     }
   }
+  _.main = main;
   _.mainTest = mainTest;
   _.gerarFator = gerarFator;
   _.danoT = danoT;

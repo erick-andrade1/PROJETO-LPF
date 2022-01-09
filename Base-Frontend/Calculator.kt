@@ -1,5 +1,7 @@
 //Programa que roda no navegador
 import kotlinx.browser.*
+
+@JsName("main")
 fun main(object1:Any,object2:Any){
     /*val pAtT1=
     val pAtT2=
@@ -14,6 +16,7 @@ fun main(object1:Any,object2:Any){
     val aTp=
     val aSp=
     val*/ 
+    println(object1);
 }
 //funcao de teste:
 fun mainTest(){
