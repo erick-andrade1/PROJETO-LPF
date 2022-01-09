@@ -10,6 +10,12 @@
     </ul>
 </div>
 <div>
+    <h4>
+        Informações sobre a aplicação:
+    </h4>
+    <p>Nossa aplicação consiste no cálculo de dano na luta entre dois pokémons, em nossa lógica usamos apenas o pokémon atacante e o pokémon defensor, cada um deles tem campos em que o jogador irá escolher seus atributos para fazer o resultado da f</p>
+</div>
+<div>
     <h4>Passo a passo para iniciar a aplicação:</h4>
     <ul>
         <li>
