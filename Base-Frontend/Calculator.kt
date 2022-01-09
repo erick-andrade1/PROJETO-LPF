@@ -1,10 +1,12 @@
-fun gerarFator(lista:List<String>):modFlo
+fun gerarFator(lista:String){
+    val x1=if("burn" in lista){Pair("burn",0.5)}else{Pair("burn",1)}
+}
 fun danoT(ataq:ataque,pokeA:pokemon,pokeD:pokemon,fatores:modFlo){
-    val w=fatores.contains(wonderGuard)
+    val w=fatores.contains("wonderGuard")
     val r=calculos(ataq,pokeA,pokeD,w)
     val m=fatores.mult1()
 }
-fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Float{
+fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Int{
     val a=if(ataq.special){pokeA.spAtk.toFloat()}else{pokeA.atk.toFloat()}
     val d=if(ataq.special){pokeD.spDef}else{pokeD.def}
     val l=pokeA.level*2f/5+2
@@ -14,27 +16,30 @@ fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Float{
     val m=pokeD.t[ataq.tipo]
     val fr=if(wonder && m<=1f){0f}else{pokeD.t[ataq.tipo]}
     val result=fr*stab*p2
-    return result
+    return result.toInt()
 }
 class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificadores baseados em Float
-operator fun times(n:Pair<String,Float>):modFlo{
-    val (nT,mD)=n
-    val i =this.indexOf(nT)
-    val v=this[i]
-    if(v==0f){//para antes caso um tipo garanta imunidade
+    operator fun times(n:Pair<String,Float>):modFlo{
+        val (nT,mD)=n
+        val i =this.indexOf(nT)
+        val v=this[i]
+        if(v==0f){//para antes caso um tipo garanta imunidade
         return this
-    }
-    val nM=mD*this[i]
-    val novo=this-nT
-    if(nM==1f){//retira o tipo da lista caso ele passe a causar dano neutro
+        }
+        val nM=mD*this[i]
+        val novo=this-nT
+        if(nM==1f){//retira o tipo da lista caso ele passe a causar dano neutro
         return novo
+        }
+        else{
+            return novo+Pair(nT,nM)
+        }
     }
-    else{
-        return novo+Pair(nT,nM)
-    }
-}
     operator fun plus(other: Pair<String, Float>): modFlo {
         val (nT, nM) = other
+        if (this.nome.contains(nT)) {
+            return this
+        }
         return modFlo(this.nome + nT, this.valor + nM)
     }
     operator fun minus(s: String): modFlo {
@@ -48,7 +53,11 @@ operator fun times(n:Pair<String,Float>):modFlo{
         return modFlo(this.nome.filterNot { it == s }, this.valor.filterIndexed { index, i -> index != x })
     }
     operator fun get(i: Int): Float {//quando for pegar o float use o operador get
-        if (this.size() == 0){
+        val x=this.size()
+        if (x == 0){
+            return 1f
+        }
+        else if(x<=i){
             return 1f
         }
         return this.valor[i]
