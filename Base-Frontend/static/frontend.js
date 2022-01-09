@@ -13,12 +13,12 @@ if (typeof kotlin === 'undefined') {
     if (elem != null) {
       elem.innerHTML = elem.innerHTML + ('\n' + '            <br> <font color=' + '"' + nome + '"' + '>Este texto foi inserido pelo programa Kotlin ' + '\n' + '            ao pressionar o botao ' + nome + '<\/font>' + '\n' + '            <button onclick=' + '"' + "frontend.botaoClicado('yellow')" + '"' + '>Nao aperte esse botao<\/button>' + '\n' + '            ');
     }}
-  function main$lambda() {
-    var elem = document.getElementById('p1');
-    if (elem != null) {
-      elem.innerHTML = elem.innerHTML + '<br> Tick\n';
-    }return Unit;
-  }
+  // function main$lambda() {
+  //   var elem = document.getElementById('p1');
+  //   if (elem != null) {
+  //     elem.innerHTML = elem.innerHTML + '<br> Tick\n';
+  //   }return Unit;
+  // }
   function main() {
     for (var c = 1; c <= 100; c++)
       window.setInterval(main$lambda, 1000);
