@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col">
                         <div class="page-font" style="font-size: 24px; color: #0b065b;">
                             Informe o poder de ataque:
                         </div>
@@ -122,20 +122,42 @@
                                 placeholder="Insira um número...">
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                            O ataque é especial?
+                        </div>
+                        <div class="page-font" style="padding: 20px; color: #0b065b;">
+                            <input type="checkbox" id="scales" name="pokemon1.atkType" style=" transform: scale(1.5);">
+                            <label for="">Sim</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
                     <div class="col-3">
                         <div class="page-font" style="font-size: 24px; color: #0b065b;">
                             Guts
                         </div>
                         <div class="page-font" style="padding: 20px; color: #0b065b;">
-                            <input type="number" id="scales" name="pokemon1.atkType style=" transform: scale(1.5);">
+                            <input type="checkbox" id="scales" name="pokemon1.guts" style=" transform: scale(1.5);">
+                            <label for="">Sim</label>
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="page-font" style="font-size: 24px; color: #0b065b;">
-                            O ataque é especial?
+                            Guts
                         </div>
                         <div class="page-font" style="padding: 20px; color: #0b065b;">
-                            <input type="checkbox" id="scales" name="pokemon1.atkType style=" transform: scale(1.5);">
+                            <input type="checkbox" id="scales" name="pokemon1.guts" style=" transform: scale(1.5);">
+                            <label for="">Sim</label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                            Guts
+                        </div>
+                        <div class="page-font" style="padding: 20px; color: #0b065b;">
+                            <input type="checkbox" id="scales" name="pokemon1.guts" style=" transform: scale(1.5);">
                             <label for="">Sim</label>
                         </div>
                     </div>
@@ -204,7 +226,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-3">
                         <div class="page-font" style="font-size: 24px; color: #0b065b;">
                             DEF:
                         </div>
@@ -213,13 +235,22 @@
                                 placeholder="Insira um número...">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <div class="page-font" style="font-size: 24px; color: #0b065b;">
                             SP.DEF:
                         </div>
                         <div style="padding: 20px;">
                             <input type="number" name="pokemon2.spdef" style="width: 200px;"
                                 placeholder="Insira um número...">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="page-font" style="font-size: 24px; color: #0b065b;">
+                            Wonder Guard:
+                        </div>
+                        <div class="page-font" style="padding: 20px; color: #0b065b;">
+                            <input type="checkbox" id="scales" name="pokemon2.wonderGuard" style=" transform: scale(1.5);">
+                            <label for="">Sim</label>
                         </div>
                     </div>
                 </div>
@@ -244,6 +275,8 @@
                 <li> A calculadora faz o cálculo de dano causado por um ataque em outro Pokémon</li>
                 <li> Os ataques também possuem tipos</li>
                 <li> Stab: Quando o ataque é do mesmo tipo que o Pokémon a força dele é aumentada em 50% </li>
+                <li> Wonder Guard: Deixará nulo qualquer ataque que não seja *super* efetivo</li>
+                <li> Guts: É uma habilidade para caso esteja com status negativo (burn e poison) seu ataque aumenta</li>
             </ul>
         </div>
     </div>
