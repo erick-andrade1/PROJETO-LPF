@@ -13,11 +13,7 @@ import kotlin.io.*
 @SpringBootApplication
 @RestController
 open class MyApp {
-    @GetMapping("/BackEnd.html")
-    fun BackEnd() : Any {    
-        return File("../Base-Backend/BackEnd.kt");
-    }
-
+    
 }
 
 
