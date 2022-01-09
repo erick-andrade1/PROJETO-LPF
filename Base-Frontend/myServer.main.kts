@@ -17,5 +17,5 @@ open class MyApp {
 }
 
 
-runApplication<MyApp>("--server.port=8000")
-println("Server running on port = 8000");
+runApplication<MyApp>("--server.port=8080")
+println("Server running on port = 8080");

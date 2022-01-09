@@ -1,4 +1,8 @@
-fun main(){//funcao de teste
+//Programa que roda no navegador
+import kotlinx.browser.*
+
+//funcao de teste:
+fun mainTest(){
     val ma=modFlo(listOf("F","G","W"),listOf(2F,0.5F,2f))
     val mb=modFlo(listOf("N","G","W"),listOf(0.5F,2F,2f))
     val mc=modFlo(listOf("N","F","W"),listOf(1F,1F,1f))
@@ -32,13 +36,19 @@ fun main(){//funcao de teste
         }
     }
 }
+
+@JsName("gerarFator")
 fun gerarFator(lista:String):modFlo{
     val x1=if("guts" in lista){if("burn" in lista || "poison" in lista){Pair("guts",2f)}else{Pair("guts",1f)}}
     else{if("burn" in lista){Pair("burn",0.5f)}else{Pair("guts",1f)}}
     val f=if("wonder" in lista){modFlo(listOf("wonder"),listOf(1f))}else{modFlo(listOf(),listOf())}
     return f+x1
 }
-fun danoT(ataq:ataque,pokeA:pokemon,pokeD:pokemon,fatores:modFlo):List<Int>{//calcula 4 danos possiveis se baseano em duas variaveis aleatorias
+
+
+//calcula 4 danos possiveis se baseano em duas variaveis aleatorias:
+@JsName("danoT")
+fun danoT(ataq:ataque,pokeA:pokemon,pokeD:pokemon,fatores:modFlo):List<Int>{
     val w=fatores.contains("wonder")
     val pDef:pokemon=if(w){pokeD.wD()}else{pokeD}
     val r=calculos(ataq,pokeA,pDef,w)
@@ -48,6 +58,8 @@ fun danoT(ataq:ataque,pokeA:pokemon,pokeD:pokemon,fatores:modFlo):List<Int>{//ca
     println(ataq.tipo+"-"+pokeA.t.nome+"-"+pokeD.t.nome+"-"+fatores.nome)
     return listOf((rf*0.85).toInt(),rf.toInt(),(rf*0.85*crit).toInt(),(rf*crit).toInt())
 }
+
+@JsName("calculos")
 fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Int{
     val a=if(ataq.special){pokeA.spAtk.toFloat()}else{pokeA.atk.toFloat()}
     val d=if(ataq.special){pokeD.spDef}else{pokeD.def}
@@ -60,17 +72,22 @@ fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Int{
     val result=fr*stab*p2
     return result.toInt()
 }
-class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificadores baseados em Float
+
+//amazena modificadores baseados em Float
+@JsName("modFlo")
+class modFlo(val nome: List<String>, val valor: List<Float>){
     operator fun times(n:Pair<String,Float>):modFlo{
         val (nT,mD)=n
         val i =this.indexOf(nT)
         val v=this[i]
-        if(v==0f){//para antes caso um tipo garanta imunidade
+        //para antes caso um tipo garanta imunidade
+        if(v==0f){
             return this
         }
         val nM=mD*this[i]
         val novo=this-nT
-        if(nM==1f){//retira o tipo da lista caso ele passe a causar dano neutro
+        //retira o tipo da lista caso ele passe a causar dano neutro
+        if(nM==1f){
             return novo
         }
         else{
@@ -94,7 +111,9 @@ class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificad
         val x = this.indexOf(s)
         return modFlo(this.nome.filterNot { it == s }, this.valor.filterIndexed { index, i -> index != x })
     }
-    operator fun get(i: Int): Float {//quando for pegar o float use o operador get
+
+    //quando for pegar o float use o operador get
+    operator fun get(i: Int): Float {
         val x=this.size()
         if (x == 0){
             return 1f
@@ -104,7 +123,9 @@ class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificad
         }
         return this.valor[i]
     }
-    operator fun get(i: String): Float {//versão alternativa do get que usa string
+
+    //versão alternativa do get que usa string
+    operator fun get(i: String): Float {
         val x = this.indexOf(i)
         if (x<0){
             return 1f
@@ -135,10 +156,14 @@ class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificad
     fun contains(s: String):Boolean {
         return this.nome.contains(s)
     }
-    fun getS(i: Int):String{//quando for pegar a string use getS()
+
+    //quando for pegar a string use getS()
+    fun getS(i: Int):String{
         return this.nome[i]
     }
-    fun getP(i: Int):Pair<String,Float>{//retorna um pair
+
+    //retorna um pair
+    fun getP(i: Int):Pair<String,Float>{
         return Pair(this.getS(i),this[i])
     }
     fun size(): Int {
@@ -160,13 +185,18 @@ class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificad
 
     }
 }
+
+@JsName("pokemon")
 class pokemon(val t:type,val atk:Int,val spAtk:Int,val def:Int,val spDef:Int,val level:Int){
     fun wD():pokemon{
         val nT=this.t.modifica.wonderGuard(0)
         return pokemon(type(t.nome,nT),atk,spAtk,def,spDef,level)
     }
 }
-class type(val nome: String, val modifica: modFlo){//armazena as informacoes do tipo
+
+//armazena as informacoes do tipo
+@JsName("type")
+class type(val nome: String, val modifica: modFlo){
     fun vTipo(s: String):Boolean{
         return s in this.nome
     }
@@ -177,9 +207,15 @@ class type(val nome: String, val modifica: modFlo){//armazena as informacoes do 
         return this.modifica[i]
     }
 }
-class ataque(val tipo: String, val power: Int ,val special: Boolean){//armazena as informacoes do ataque
+
+//armazena as informacoes do ataque
+@JsName("ataque")
+class ataque(val tipo: String, val power: Int ,val special: Boolean){
 }
-fun duoType(tp1: type,tp2: type):type{//combina os dois tipos para calcular o dano recebido por um pokemon com dois tipos
+
+//combina os dois tipos para calcular o dano recebido por um pokemon com dois tipos
+@JsName("duoType")
+fun duoType(tp1: type,tp2: type):type{
     if(tp1==tp2){
         return tp1
     }
@@ -187,11 +223,15 @@ fun duoType(tp1: type,tp2: type):type{//combina os dois tipos para calcular o da
     val n2=tp2.nome
     return type("$n1$n2", combinar(tp1.modifica,tp2.modifica,0))
 }
+
+@JsName("combinar")
 fun combinar(a1: modFlo,a2: modFlo,n :Int):modFlo{
-    if(n>=a2.size()){//todos os elementos foram analisados
+    //todos os elementos foram analisados
+    if(n>=a2.size()){
         return a1
     }
-    else if(a1.contains(a2.getS(n))){// retorna alterando os tipos da lista
+    // retorna alterando os tipos da lista
+    else if(a1.contains(a2.getS(n))){
         return combinar((a1*a2.getP(n)),a2,n+1)
     }
     else{
