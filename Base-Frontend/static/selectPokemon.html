@@ -19,7 +19,7 @@
     <div class="justify-center" style="padding-top: 30px; padding-bottom: 40px;">
         <img src="./images/256px-International_Pokémon_logo.svg.png">
     </div>
-    <form action="" method="post">
+    <form action="/" method="post">
         <div class="row">
             <div class="col">
                 <div style="padding: 50px;">
@@ -32,7 +32,7 @@
                         Selecione o 1º tipo do Pokémon
                     </div>
                     <div style="padding: 20px;">
-                        <select name="Type1" id="" style="width: 200px; height: 30px;">
+                        <select name="pokemon1.type1" id="" style="width: 200px; height: 30px;">
                             <option value="" selected disabled>Selecione:</option>
                             <option value="1">Fire</option>
                             <option value="2">Grass</option>
@@ -60,7 +60,7 @@
                         Selecione o 2º tipo do Pokémon
                     </div>
                     <div style="padding: 20px;">
-                        <select name="Type2" id="" style="width: 200px; height: 30px;">
+                        <select nname="pokemon1.type2" id="" style="width: 200px; height: 30px;">
                             <option value="" selected disabled>Selecione:</option>
                             <option value="1">Fire</option>
                             <option value="2">Grass</option>
@@ -89,7 +89,7 @@
                             ATK:
                         </div>
                         <div style="padding: 20px; display: inline-block;">
-                            <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                            <input type="number" name="pokemon1.atk" style="width: 200px;" placeholder="Insira um número...">
                         </div>
                     </div>
                     <div class="page-font col-3" style="font-size: 24px; color: #0b065b; display: inline-block;">
@@ -97,7 +97,7 @@
                             SP.ATK
                         </div>
                         <div style="padding: 20px; display: inline-block;">
-                            <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                            <input type="number" name="pokemon1.spatk" style="width: 200px;" placeholder="Insira um número...">
                         </div>
                     </div>
                     <div class="page-font col-3" style="font-size: 24px; color: #0b065b; display: inline-block;">
@@ -105,7 +105,7 @@
                             LEVEL:
                         </div>
                         <div style="padding: 20px; display: inline-block;">
-                            <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                            <input type="number" name="pokemon1.level" style="width: 200px;" placeholder="Insira um número...">
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                             Informe o poder de ataque:
                         </div>
                         <div style="padding: 20px;">
-                            <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                            <input type="number" name="pokemon1.atkpower" style="width: 200px;" placeholder="Insira um número...">
                         </div>
                     </div>
                     <div class="col">
@@ -123,8 +123,8 @@
                             O ataque é especial?
                         </div>
                         <div class="page-font" style="padding: 20px; color: #0b065b;">
-                            <input type="checkbox" id="scales" name="atkType" style="transform: scale(1.5);">
-                            <label for="atkType">Sim</label>
+                            <input type="checkbox" id="scales" name="pokemon1.atkType style="transform: scale(1.5);">
+                            <label for="">Sim</label>
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                         Selecione o 1º tipo do Pokémon
                     </div>
                     <div style="padding: 20px;">
-                        <select name="Type1" id="" style="width: 200px; height: 30px;">
+                        <select name="pokemon2.type1" id="" style="width: 200px; height: 30px;">
                             <option value="" selected disabled>Selecione:</option>
                             <option value="1">Fire</option>
                             <option value="2">Grass</option>
@@ -168,7 +168,7 @@
                         Selecione o 2º tipo do Pokémon
                     </div>
                     <div style="padding: 20px;">
-                        <select name="Type2" id="" style="width: 200px; height: 30px;">
+                        <select name="pokemon2.type2" id="" style="width: 200px; height: 30px;">
                             <option value="" selected disabled>Selecione:</option>
                             <option value="1">Fire</option>
                             <option value="2">Grass</option>
@@ -197,7 +197,7 @@
                             DEF:
                         </div>
                         <div style="padding: 20px;">
-                            <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                            <input type="number" name="pokemon2.def" style="width: 200px;" placeholder="Insira um número...">
                         </div>
                     </div>
                     <div class="col">
@@ -205,7 +205,7 @@
                             SP.DEF:
                         </div>
                         <div style="padding: 20px;">
-                            <input type="number" style="width: 200px;" placeholder="Insira um número...">
+                            <input type="number" name="pokemon2.spdef" style="width: 200px;" placeholder="Insira um número...">
                         </div>
                     </div>
                 </div>
