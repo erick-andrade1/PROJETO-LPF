@@ -37,7 +37,6 @@ fun gerarFator(lista:String):modFlo{
     else{if("burn" in lista){Pair("burn",0.5f)}else{Pair("guts",1f)}}
     val f=if("wonder" in lista){modFlo(listOf("wonder"),listOf(1f))}else{modFlo(listOf(),listOf())}
     return f+x1
-
 }
 fun danoT(ataq:ataque,pokeA:pokemon,pokeD:pokemon,fatores:modFlo):List<Int>{//calcula 4 danos possiveis se baseano em duas variaveis aleatorias
     val w=fatores.contains("wonder")
@@ -62,22 +61,22 @@ fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Int{
     return result.toInt()
 }
 class modFlo(val nome: List<String>, val valor: List<Float>){//amazena modificadores baseados em Float
-operator fun times(n:Pair<String,Float>):modFlo{
-    val (nT,mD)=n
-    val i =this.indexOf(nT)
-    val v=this[i]
-    if(v==0f){//para antes caso um tipo garanta imunidade
-        return this
+    operator fun times(n:Pair<String,Float>):modFlo{
+        val (nT,mD)=n
+        val i =this.indexOf(nT)
+        val v=this[i]
+        if(v==0f){//para antes caso um tipo garanta imunidade
+            return this
+        }
+        val nM=mD*this[i]
+        val novo=this-nT
+        if(nM==1f){//retira o tipo da lista caso ele passe a causar dano neutro
+            return novo
+        }
+        else{
+            return novo+Pair(nT,nM)
+        }
     }
-    val nM=mD*this[i]
-    val novo=this-nT
-    if(nM==1f){//retira o tipo da lista caso ele passe a causar dano neutro
-        return novo
-    }
-    else{
-        return novo+Pair(nT,nM)
-    }
-}
     operator fun plus(other: Pair<String, Float>): modFlo {
         val (nT, nM) = other
         if (this.nome.contains(nT) || nM==1f) {
