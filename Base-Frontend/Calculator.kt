@@ -1,7 +1,19 @@
 //Programa que roda no navegador
 import kotlinx.browser.*
-fun main(){
-    
+fun main(object1:Any,object2:Any){
+    /*val pAtT1=
+    val pAtT2=
+    val pAtk1=
+    val pAtk2=
+    val pLev=
+    val pDef1=
+    val pDef2=
+    val pDfT1=
+    val pDfT2=
+    val aPow=
+    val aTp=
+    val aSp=
+    val*/ 
 }
 //funcao de teste:
 fun mainTest(){
