@@ -8,15 +8,35 @@
     font-size: 32px;
     color: black;
 }
+
 .page-font{
     font-family: cursive;
     font-weight: lighter;
 }
+
 .button-style:hover{
     transition: 0.4s;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
 .justify-center{
     display: flex;
     justify-content: center;
+}
+
+.justify-between{
+    display: flex;
+    justify-content: space-around;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 5px;
+}
+.grid-container > div {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
 }
