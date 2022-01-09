@@ -1,4 +1,4 @@
-fun main(){
+fun main(){//funcao de teste
     val ma=modFlo(listOf("F","G","W"),listOf(2F,0.5F,2f))
     val mb=modFlo(listOf("N","G","W"),listOf(0.5F,2F,2f))
     val mc=modFlo(listOf("N","F","W"),listOf(1F,1F,1f))
@@ -167,9 +167,9 @@ class pokemon(val t:type,val atk:Int,val spAtk:Int,val def:Int,val spDef:Int,val
     }
 }
 class type(val nome: String, val modifica: modFlo){//armazena as informacoes do tipo
-fun vTipo(s: String):Boolean{
-    return s in this.nome
-}
+    fun vTipo(s: String):Boolean{
+        return s in this.nome
+    }
     fun same(t:type):Boolean{
         return this.nome==t.nome
     }
