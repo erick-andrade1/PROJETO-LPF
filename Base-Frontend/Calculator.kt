@@ -1,6 +1,8 @@
 //Programa que roda no navegador
 import kotlinx.browser.*
-
+fun main(){
+    
+}
 //funcao de teste:
 fun mainTest(){
     val ma=modFlo(listOf("F","G","W"),listOf(2F,0.5F,2f))
