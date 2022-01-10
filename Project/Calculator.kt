@@ -79,7 +79,7 @@ fun danoT(ataq:ataque,pokeA:pokemon,pokeD:pokemon,fatores:modFlo):List<Int>{
 }
 
 @JsName("calculos")
-fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Int{
+fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Float{
     val a=if(ataq.special){pokeA.spAtk.toFloat()}else{pokeA.atk.toFloat()}
     val d=if(ataq.special){pokeD.spDef}else{pokeD.def}
     val l=pokeA.level*2f/5+2
@@ -89,7 +89,7 @@ fun calculos(ataq:ataque,pokeA:pokemon,pokeD:pokemon,wonder:Boolean):Int{
     val m=pokeD.t[ataq.tipo]
     val fr=if(wonder && m<=1f){0f}else{pokeD.t[ataq.tipo]}
     val result=fr*stab*p2
-    return result.toInt()
+    return result
 }
 
 //amazena modificadores baseados em Float
