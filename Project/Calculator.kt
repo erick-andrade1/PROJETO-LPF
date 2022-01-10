@@ -43,6 +43,8 @@ fun mainTest(){
     val listA=listOf(ataqF,ataqG,ataqW,ataqN)
     val listP=listOf(poke1,poke2,poke3)
     val listF=listOf(fator1,fator2,fator3,fator4)
+    //usado somente para testes
+    //é a unica forma de testar todos os valores acima sem usar uma linha para cada combinacao
     for(a in listA){
         for(p1 in listP){
             for(p2 in listP){
